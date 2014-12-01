@@ -3,17 +3,17 @@ import ftp
 ftp = ftplib.FTP( 'sidads.colorado.edu' )
 ftp.cwd( '/pub/DATASETS/nsidc0051_gsfc_nasateam_seaice/final-gsfc/north/monthly' )
 
-
+# this may work
 numpy.fromfile(f, dtype=np.int8)
 
-
 path = 'ftp://sidads.colorado.edu/pub/DATASETS/nsidc0051_gsfc_nasateam_seaice/final-gsfc/north/monthly'
-
 
 import urllib2
 
 path = 'ftp://sidads.colorado.edu/pub/DATASETS/nsidc0051_gsfc_nasateam_seaice/final-gsfc/north/monthly'
 
+
+# urrlib approach attempt
 req = urllib2.Request( path )
 
 response = urllib2.urlopen( req )
@@ -30,6 +30,4 @@ def get_date( f ):
 	split = f.split( '_' )
 	split = split[1]
 	return( f, split )
-
-
 
